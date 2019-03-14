@@ -1,0 +1,12 @@
+{
+    "feeds": [
+        {
+            "url": "https://news.ycombinator.com/rss",
+            "output": "output.xml",
+            "filters": [
+                { "keys": ["Microsoft"] },
+                { "keys": ["Apple"] }
+            ]
+        }
+    ]
+}
