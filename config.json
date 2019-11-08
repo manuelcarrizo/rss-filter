@@ -2,7 +2,7 @@
     "feeds": [
         {
             "url": "https://nyaa.si/?page=rss&u=puyero",
-            "output": "/home/manuel/minion/volumes/nginx/data/puya.xml",
+            "output": "/usr/local/www/nginx/puya.xml",
             "filters": [
                 { "keys": ["Boogiepop", "1080"] },
                 { "keys": ["Sword Art Online", "1080"] },
