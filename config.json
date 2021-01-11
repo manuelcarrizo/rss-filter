@@ -1,15 +1,10 @@
 {
-    "feeds": [
-        {
-            "url": "https://nyaa.si/?page=rss&u=puyero",
-            "output": "/usr/local/www/nginx/puya.xml",
-            "filters": [
-                { "keys": ["Boogiepop", "1080"] },
-                { "keys": ["Sword Art Online", "1080"] },
-		{ "keys": ["One Punch", "1080"] },
-		{ "keys": ["Shingeki no Kyojin", "1080"] },
-                { "keys": ["Enen no Shouboutai", "1080"] }
-            ]
-        }
+    "filters": [
+        { "keys": ["Boogiepop", "1080"], "category": "TV_Shows"},
+        { "keys": ["Sword Art Online", "1080"], "category": "TV_Shows"},
+        { "keys": ["One Punch", "1080"], "category": "TV_Shows"},
+        { "keys": ["Shingeki no Kyojin", "1080"], "category": "TV_Shows"},
+        { "keys": ["Enen no Shouboutai", "1080"], "category": "TV_Shows"},
+        { "keys": ["Neverland", "1080"], "category": "TV_Shows"}
     ]
 }
