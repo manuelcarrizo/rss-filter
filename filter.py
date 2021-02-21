@@ -5,11 +5,11 @@ from urllib import request
 from defusedxml import ElementTree
 
 def usage():
-    print("python %s URL|FILE" % __file__)
-    print("Filters URL or FILE xml file to remove entries that don't match the filters on config.json")
+    print("python %s CONFIG_FILE" % __file__)
+    print("Filters URL or FILE xml file with an RSS feed to remove entries that don't match the filters on config.json")
 
 def input(source):
-    if os.path.exists(source) and os.path.isfile(source):
+    if source is not None and os.path.exists(source) and os.path.isfile(source):
         with open(source) as f:
             data = f.read()
     else:
@@ -32,9 +32,9 @@ def filter_xml(data, config):
             some_matches = all(map(lambda w: w in title, tuple(filters["keys"])))
 
             if some_matches:
-                if filters.get("category", None):
-                    elem = '<qbCategory>%s</qbCategory>' % filters["category"]
-                    item.append((ElementTree.fromstring(elem)))
+                #if filters.get("category", None):
+                #    elem = '<qbCategory>%s</qbCategory>' % filters["category"]
+                #    item.append((ElementTree.fromstring(elem)))
                 break
 
         if not some_matches:
@@ -49,10 +49,10 @@ if __name__ == "__main__":
         exit(1)
 
     config = {}
-    with open("config.json", "r") as config_file:
+    with open(sys.argv[1], "r") as config_file:
         config = json.load(config_file)
 
-    source = sys.argv[1]
+    source = config.get("source", None)
     data = input(source)
 
     filter_xml(data, config)

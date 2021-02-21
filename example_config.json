@@ -1,0 +1,15 @@
+{
+    "source": "https://nyaa.si/?page=rss&u=puyero",
+    "filters": [
+        { "keys": ["Jujutsu Kaisen", "1080"], "category": "TV_Shows/Jujutsu Kaisen"},
+        { "keys": ["Shingeki no Kyojin", "1080"], "category": "TV_Shows/Shingeki no Kyojin - The Final Season"},
+        { "keys": ["Evangelion", "1080"], "category": "Movies"}
+    ],
+    "qbittorrent":
+        {
+            "host": "localhost",
+            "port": 8080,
+            "username": "myusername",
+            "password": "mypassword"
+        }
+}
