@@ -9,7 +9,9 @@ def usage():
     print("Filters URL or FILE xml file with an RSS feed to remove entries that don't match the filters on config.json")
 
 def input(source):
-    if source is not None and os.path.exists(source) and os.path.isfile(source):
+    if source is None:
+        data = sys.stdin.read()
+    elif os.path.exists(source) and os.path.isfile(source):
         with open(source) as f:
             data = f.read()
     else:
