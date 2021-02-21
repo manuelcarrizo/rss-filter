@@ -15,6 +15,7 @@ do_venv() {
 }
 
 CURRENT_PATH=`dirname ${BASH_SOURCE}`
+CONFIG=$1
 
 do_venv
 do_activate
@@ -23,4 +24,4 @@ cd $CURRENT_PATH
 
 pip install -r requirements.txt
 
-python main.py
+python filter.py $CONFIG | python upload.py $CONFIG
